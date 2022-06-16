@@ -1,0 +1,21 @@
+.col{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+}
+.card{
+    box-shadow: 10px 20px 30px #E9E4F0;
+    width: 18rem;
+    margin: 10px auto;
+    &:hover{
+        box-shadow: 0 0 10px #0575E6;
+    }
+    img{
+        width: 100%;
+        opacity: .7;
+        &:hover{
+            opacity: 1;
+        }
+    }
+}
+

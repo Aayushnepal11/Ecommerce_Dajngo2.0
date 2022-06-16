@@ -1,0 +1,39 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+
+{% block title %}
+    {% if category %} {{ category.name }} {% else %} Products {% endif %}
+{% endblock title %}
+
+{% block content %}
+    <div id="nav">
+        <ul class=" nav nav-pills mini-menu">
+            <li {% if not category %}class="selected"{% endif %}>
+                <a class="nav-link" href="{% url 'shop:product_list' %}">All</a>
+            </li>
+            {% for items in categories %}
+                <li {% if category.slug == items.slug %} class="selected" {% endif %}>
+                    <a class="nav-link" href ="{{items.get_absolute_url}}">{{items.name}}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div id="main" class="product_list">
+        <h1 class="text-center">{% if category %}{{ category.name }}{% else %}Products{% endif %}</h1>
+        <div class="col">
+        {% for product in products %}
+            <div class="card">
+                <a href="{{ product.get_absolute_url }}">
+                    <img src="{% if product.imgURL %} {{ product.imgURL }} {% else %}{% static 'img/no_image.png' %} {% endif %}">
+                </a>
+                <div class="card-body">
+                <a href="{{ product.get_absolute_url }}"> {{product.name}}</a>
+                <br>
+                Rs{{product.price}}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    </div>
+{% endblock content %}
