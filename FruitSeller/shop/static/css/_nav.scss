@@ -38,6 +38,10 @@ $font-size : 20px;
     .nav-link{
         color: #fff;
         font-size: $font-size;
+        span{
+            top: 10px;
+            color: #dfe3db;
+        }
         &:hover{
             color: #ece9e699;
         }
@@ -67,4 +71,16 @@ $font-size : 20px;
             color: #0066C3;
         }
     }
+}
+
+@media screen and (max-width:400px) {
+    .right{
+        .nav-link{
+            span{
+                bottom: 40px;
+             padding-left: 2px;
+            }
+        }
+    }
+    
 }
