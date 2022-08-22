@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_extensions',
+    # 'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -134,7 +134,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 LOGIN_URL = 'users:login'
 
-GRAPH_MODELS = {
-    'all_applications': True,
-    'graph_models': True,
-}
+# GRAPH_MODELS = {
+#     'all_applications': True,
+#     'graph_models': True,
+# }
