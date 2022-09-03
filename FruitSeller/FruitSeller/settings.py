@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+     'jazzmin',
     'orders.apps.OrdersConfig',
     'shop.apps.ShopConfig',
     'cart.apps.CartConfig',
