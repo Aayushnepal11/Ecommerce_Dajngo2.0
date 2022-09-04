@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 import os
 from pathlib import Path
+from datetime import date
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-     'jazzmin',
+    'jazzmin',
     'orders.apps.OrdersConfig',
     'shop.apps.ShopConfig',
     'cart.apps.CartConfig',
@@ -139,3 +140,11 @@ LOGIN_URL = 'users:login'
 #     'all_applications': True,
 #     'graph_models': True,
 # }
+
+JAZZMIN_SETTINGS ={
+    'site_title': "Fruit Seller",
+    'site_header': 'Fruit Seller',
+    'site_brand': 'Fruit Seller',
+    'welcome_sign': 'Welcome to Fruit Seller',
+    'copyright': 'Fruit Seller ' + str(date.year),
+}
